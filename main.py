@@ -1,12 +1,17 @@
+# 程序主入口，用于启动程序
+#
+# create by：zhuyiming 2024.3.3
+
+
 from PyQt5 import QtCore,QtWidgets,QtGui
-from UI.mainWindow import Ui_MainWindow
+from mainWindow import MainWindowExtend
 import sys
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    ui = Ui_MainWindow()
+    mainWindow = MainWindowExtend()
     window = QtWidgets.QMainWindow()
-    ui.setupUi(window)
-    window .show()
+    mainWindow.setupUi(window)
+    window.show()
     sys.exit(app.exec_())
 

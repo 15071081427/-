@@ -1,3 +1,7 @@
+# TimeAxis类,用于绘制时间轴
+#
+# create by：zhuyiming 2024.3.3
+
 import matplotlib.pyplot as plt
 
 
@@ -5,6 +9,10 @@ class TimeAxis(object):
     data = []
 
     def init(self):
+        """ 初始化时间轴布局
+
+        return:画布及画布中的对象
+        """
         fig, ax = plt.subplots(sharey=True, figsize=(7,4))
         y = [5,10,15,20,25,30,35,40]
         x = [4,4,4,4,4,4,4,4]
@@ -14,6 +22,10 @@ class TimeAxis(object):
         return fig, ax
 
     def drawTimeAxis(self, ax):
+        """ 绘制时间轴
+
+        :param ax:画布中的对象
+        """
         left_prop = 0.4
         right_prop = 0.6
         change_rate = 1/len(self.data)*1.0

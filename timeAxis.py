@@ -77,9 +77,9 @@ class TimeAxis(object):
             obj_left.remove()
         if obj_right:
             obj_right.remove()
-        obj_left = plt.text(detaX-3, detaY, "删除", fontsize=15, horizontalalignment='center'
+        obj_left = plt.text(detaX-2, detaY, "删除", fontsize=15, horizontalalignment='center'
                           , verticalalignment='center', transform=ax.transData, color='red')
-        obj_right = plt.text(detaX+3, detaY, "编辑", fontsize=15, horizontalalignment='center'
+        obj_right = plt.text(detaX+2, detaY, "编辑", fontsize=15, horizontalalignment='center'
                           , verticalalignment='center', transform=ax.transData, color='green')
         return obj_left, obj_right
 

@@ -99,7 +99,8 @@ class BillSqlalchemy(object):
 
         :param _id:当前id信息
         """
-        delete_bill = self.session.query(Bill).filter_by(id=_id)
+        delete_bill = self.session.query(Bill).filter_by(id=_id).first()
+        print('delete %s'%delete_bill)
         if delete_bill:
             self.session.delete(delete_bill)
             self.session.commit()

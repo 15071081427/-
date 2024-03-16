@@ -36,10 +36,10 @@ class billExtend(Ui_Dialog, QtWidgets.QWidget):
         self.tabWidget.setCurrentIndex(self.billType)
         if self.billType == 0:
             self.label_expenseType.setText(self.totalType)
-            self.lineEdit_expenseVal.setText(str(self.money))
+            self.lineEdit_expenseVal.setText('%.2f'%self.money)
         elif self.billType == 1:
             self.label_incomeType.setText(self.totalType)
-            self.lineEdit_incomeVal.setText(str(self.money))
+            self.lineEdit_incomeVal.setText('%.2f'%self.money)
         
 
     def setupUi(self, Dialog):
@@ -75,6 +75,11 @@ class billExtend(Ui_Dialog, QtWidgets.QWidget):
         """
         self.lineEdit_incomeVal.setText('0.00')
         self.lineEdit_expenseVal.setText('0.00')
+
+        self.label_expenseType.setText('其他')
+        self.label_incomeType.setText('其他')
+
+        self.tabWidget.setCurrentIndex(1)
 
     def initConnect(self, Dialog):
         """ 初始化连接
@@ -118,7 +123,6 @@ class billExtend(Ui_Dialog, QtWidgets.QWidget):
             billDataBase.update(self.id, self.money, self.totalType)
         dialog.hide() 
         self.hided.emit()
-        self.Clear()
 
     def tab_change(self):
         """ 切换tab页触发事件

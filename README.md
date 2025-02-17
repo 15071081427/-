@@ -1,1 +1,1 @@
-一款python实现的本地付钱工具
+一款python实现的本地记账工具，用于练习pythonqt
